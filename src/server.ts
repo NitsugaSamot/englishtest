@@ -10,6 +10,7 @@ import longTextQuestionRoutes from './routes/longTextQuestionRoutes';
 import userRoutes from './routes/userRoutes';
 import authRoutes from './routes/authRoutes';
 import completeSentences from './routes/completeSentence';
+import questionRoutes from './routes/questionRoutes'
 
 dotenv.config();
 connectDB();
@@ -22,6 +23,7 @@ app.use(express.json());
 app.use(cookieParser()); 
 
 app.use('/api/question', completeSentences);
+app.use('/api/secondSection', questionRoutes);
 app.use('/api/questions', longTextQuestionRoutes);
 app.use('/api/user', userRoutes);
 app.use('/api/auth', authRoutes);
