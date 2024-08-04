@@ -24,7 +24,7 @@ app.use(cookieParser());
 
 app.use('/api/question', completeSentences);
 app.use('/api/secondSection', questionRoutes);
-app.use('/api/questions', longTextQuestionRoutes);
+app.use('/api/thirdSection', longTextQuestionRoutes);
 app.use('/api/user', userRoutes);
 app.use('/api/auth', authRoutes);
 
