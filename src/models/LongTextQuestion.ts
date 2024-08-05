@@ -11,29 +11,24 @@ const OptionSchema = new mongoose.Schema({
   },
 });
 
-const ParagraphSchema = new mongoose.Schema({
+const RelatedQuestionSchema = new mongoose.Schema({
   text: {
     type: String,
+    required: true,
+  },
+  options: {
+    type: [OptionSchema],
     required: true,
   },
 });
 
 const LongTextQuestionSchema = new mongoose.Schema({
-  paragraphs: {
-    type: [ParagraphSchema],
+  text: {
+    type: String,
     required: true,
   },
   relatedQuestions: {
-    type: [new mongoose.Schema({
-      text: {
-        type: String,
-        required: true,
-      },
-      options: {
-        type: [OptionSchema],
-        required: true,
-      }
-    })],
+    type: [RelatedQuestionSchema],
     required: true,
   },
   category: {

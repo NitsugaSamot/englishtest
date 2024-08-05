@@ -1,21 +1,18 @@
-
 import express from 'express';
-import { createHandler, getAllHandler, getByIdHandler, updateHandler, deleteHandler } from '../handlers/longTextQuestionHandler';
+import {
+  createLongTextQuestion,
+  getLongTextQuestions,
+  getLongTextQuestionById,
+  updateLongTextQuestion,
+  deleteLongTextQuestion,
+} from '../controllers/longTextQuestionController';
 
 const router = express.Router();
 
-
-router.post('/', createHandler);
-
-
-router.get('/', getAllHandler);
-
-
-router.get('/:id', getByIdHandler);
-
-
-router.put('/:id', updateHandler);
-
-router.delete('/:id', deleteHandler);
+router.post('/', createLongTextQuestion);
+router.get('/', getLongTextQuestions);
+router.get('/:id', getLongTextQuestionById);
+router.put('/:id', updateLongTextQuestion);
+router.delete('/:id', deleteLongTextQuestion);
 
 export default router;
