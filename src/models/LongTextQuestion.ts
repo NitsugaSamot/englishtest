@@ -35,6 +35,10 @@ const LongTextQuestionSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  points: {
+    type: Number,
+    default: 5,
+  },
 });
 
 const LongTextQuestion = mongoose.model('LongTextQuestion', LongTextQuestionSchema);

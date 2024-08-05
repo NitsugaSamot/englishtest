@@ -7,6 +7,7 @@ interface ParagraphComparisonQuestion extends Document {
     questionText: string;
     correctAnswer: 'A' | 'B' | 'Both';
   }[];
+  points: number;
 }
 
 const ParagraphComparisonQuestionSchema: Schema = new Schema({
@@ -15,7 +16,8 @@ const ParagraphComparisonQuestionSchema: Schema = new Schema({
   questions: [{
     questionText: { type: String, required: true },
     correctAnswer: { type: String, enum: ['A', 'B', 'Both'], required: true }
-  }]
+  }],
+  points: { type: Number, default: 2.5 }
 });
 
 export default mongoose.model<ParagraphComparisonQuestion>('ParagraphComparisonQuestion', ParagraphComparisonQuestionSchema);
